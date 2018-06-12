@@ -10,6 +10,6 @@ block description
 
 meta(name='viewport', content='width=device-width, initial-scale=1')
 
-link(rel='icon', href=url_for(theme.favicon))
-link(rel='stylesheet', href=url_for('css/theme.css'))
-link(rel='search', type='application/opensearchdescription+xml', href=url_for('atom.xml'), title=config.title)
+link(rel='icon', href=relative_url(path, theme.favicon))
+link(rel='stylesheet', href=relative_url(path, 'css/theme.css'))
+link(rel='search', type='application/opensearchdescription+xml', href=relative_url(path, 'atom.xml'), title=config.title)

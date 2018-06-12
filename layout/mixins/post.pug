@@ -19,12 +19,12 @@ mixin posts()
             li.post-list-item
                 article.post-block
                     h2.post-title
-                        a.post-title-link(href=url_for(item.path))
+                        a.post-title-link(href=relative_url(path, item.path))
                             +postTitle(item.title)
                     +postInfo(item)
                     .post-content
                         != item.excerpt
-                    a.read-more(href=url_for(item.path))
+                    a.read-more(href=relative_url(path, item.path))
                         != __('read_more')
         - })
 
@@ -42,7 +42,7 @@ mixin postList()
                     != year
             .post-item
                 +postInfo(item)
-                a.post-title-link(href=url_for(item.path))
+                a.post-title-link(href=relative_url(path, item.path))
                     +postTitle(item.title)
         - })
 
